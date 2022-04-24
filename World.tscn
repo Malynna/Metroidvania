@@ -53,6 +53,24 @@ position = Vector2( 192, 160 )
 [node name="Brick16" parent="." instance=ExtResource( 1 )]
 position = Vector2( 208, 160 )
 
+[node name="Brick19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 128 )
+
+[node name="Brick24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 144 )
+
+[node name="Brick20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 128 )
+
+[node name="Brick21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 112 )
+
+[node name="Brick22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 112 )
+
+[node name="Brick23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 112 )
+
 [node name="Brick17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160, 144 )
 
