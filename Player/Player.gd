@@ -8,7 +8,7 @@ export (int) var ACCELERATION = 512
 export (int) var MAX_SPEED = 64
 export (float) var FRICTION = 0.25
 export (int) var GRAVITY = 200
-export (int) var JUMP_FORCE = 142
+export (int) var JUMP_FORCE = 135
 export (int) var MAX_SLOPE_ANGLE = 46
 export (int) var BULLET_SPEED = 250
 
