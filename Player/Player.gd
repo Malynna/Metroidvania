@@ -10,7 +10,7 @@ export (int) var ACCELERATION = 512
 export (int) var MAX_SPEED = 64
 export (float) var FRICTION = 0.25
 export (int) var GRAVITY = 200
-export (int) var WALL_SLIDE_SPEED = 48
+export (int) var WALL_SLIDE_SPEED = 32
 export (int) var MAX_WALL_SLIDE_SPEED = 128
 export (int) var JUMP_FORCE = 128
 export (int) var MAX_SLOPE_ANGLE = 46
@@ -203,7 +203,7 @@ func wall_slide_drop_check(delta):
 
 func wall_slide_fast_slide_check(delta):
 	var max_slide_speed = WALL_SLIDE_SPEED
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down"):
 		max_slide_speed = MAX_WALL_SLIDE_SPEED
 	motion.y = min(motion.y + GRAVITY * delta, max_slide_speed)
 
