@@ -10,5 +10,5 @@ func set_health(value):
 	if value < health:
 		Events.emit_signal("add_screenshake", 0.5, 0.5)
 	health = clamp(value, 0, max_health)
-	if health ==0:
+	if health == 0:
 		emit_signal("player_died")
