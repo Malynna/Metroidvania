@@ -141,7 +141,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ true ],
+"args": [ null ],
 "method": "set_invincible"
 }, {
 "args": [ false ],
@@ -169,7 +169,6 @@ collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0, -12 )
 texture = ExtResource( 1 )
 hframes = 12
@@ -191,7 +190,7 @@ anims/Run = SubResource( 4 )
 "anims/Wall Slide" = SubResource( 8 )
 
 [node name="BlinkAnimator" type="AnimationPlayer" parent="."]
-autoplay = "Blink"
+reset_on_save = false
 anims/Blink = SubResource( 6 )
 anims/RESET = SubResource( 7 )
 
