@@ -141,7 +141,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ null ],
+"args": [ true ],
 "method": "set_invincible"
 }, {
 "args": [ false ],

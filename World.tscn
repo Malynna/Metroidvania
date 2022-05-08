@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/FlyingEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/PlantEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/CrawlingEnemy.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Loop"
@@ -144,30 +145,21 @@ anims/RESET = SubResource( 4 )
 [node name="WalkingEnemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 215, 16 )
 
-[node name="WalkingEnemy7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 89, 30 )
-
-[node name="WalkingEnemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 288, -32 )
-
 [node name="WalkingEnemy3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 368, -64 )
 
 [node name="WalkingEnemy4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 320, 112 )
 
-[node name="WalkingEnemy5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 224, 64 )
-
 [node name="WalkingEnemy6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 80, 112 )
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 9 )]
-position = Vector2( 106, -178 )
+position = Vector2( 268, -192 )
 MAX_SPEED = 40
 
 [node name="FlyingEnemy2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 346, -187 )
+position = Vector2( 378, -175 )
 MAX_SPEED = 40
 
 [node name="PlantEnemy" parent="." instance=ExtResource( 10 )]
@@ -183,6 +175,10 @@ position = Vector2( 135, 48 )
 
 [node name="PlantEnemy3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 23, -97 )
+
+[node name="CrawlingEnemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4, -72 )
+WALKING_DIRECTION = -1
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
