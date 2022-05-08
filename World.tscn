@@ -177,8 +177,11 @@ position = Vector2( 135, 48 )
 position = Vector2( 23, -97 )
 
 [node name="CrawlingEnemy" parent="." instance=ExtResource( 11 )]
-position = Vector2( 4, -72 )
+position = Vector2( 0, -64 )
 WALKING_DIRECTION = -1
+
+[node name="CrawlingEnemy2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 96, -112 )
 
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
