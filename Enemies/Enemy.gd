@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+
 export (int) var MAX_SPEED = 15
 var motion = Vector2.ZERO
 
@@ -11,4 +13,5 @@ func _on_Hurtbox_hit(damage):
 
 
 func _on_EnemyStats_enemy_died():
+	Utils.instane_scene_on_main(EnemyDeathEffect, global_position)
 	queue_free()
