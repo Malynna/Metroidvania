@@ -88,7 +88,7 @@ func _physics_process(delta):
 			fire_missile()
 
 func fire_bullet():
-	var bullet = Utils.instane_scene_on_main(PlayerBullet, muzzle.global_position)
+	var bullet = Utils.instance_scene_on_main(PlayerBullet, muzzle.global_position)
 	bullet.velocity = Vector2.RIGHT.rotated(gun.rotation) * BULLET_SPEED
 	bullet.velocity.x *= sprite.scale.x
 	bullet.rotation = bullet.velocity.angle()
@@ -96,7 +96,7 @@ func fire_bullet():
 
 
 func fire_missile():
-	var missile = Utils.instane_scene_on_main(PlayerMissile, muzzle.global_position)
+	var missile = Utils.instance_scene_on_main(PlayerMissile, muzzle.global_position)
 	missile.velocity = Vector2.RIGHT.rotated(gun.rotation) * MISSILE_BULLET_SPEED
 	missile.velocity.x *= sprite.scale.x
 	motion -= missile.velocity * 0.25
@@ -182,7 +182,7 @@ func move():
 	# Landing
 	if was_in_air and is_on_floor():
 		motion.x = last_motion.x
-		Utils.instane_scene_on_main(JumpEffect, global_position)
+		Utils.instance_scene_on_main(JumpEffect, global_position)
 		double_jump = true
 		
 	# Just left ground
