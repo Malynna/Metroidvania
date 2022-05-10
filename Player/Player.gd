@@ -40,7 +40,7 @@ onready var coyoteJumpTimer = $CoyoteJumpTimer
 onready var fireBulletTimer = $FireBulletTimer
 onready var gun = $Sprite/PlayerGun
 onready var muzzle = $Sprite/PlayerGun/Sprite/Muzzle
-
+onready var powerupDetector = $PowerupDetector
 
 func set_invincible(value):
 	invincible = value
@@ -84,8 +84,9 @@ func _physics_process(delta):
 		fire_bullet()
 		
 	if Input.is_action_pressed("fire_missile") and fireBulletTimer.time_left == 0 :
-		if PlayerStats.missiles > 0:
+		if PlayerStats.missiles > 0 and PlayerStats.missiles_unlocked:
 			fire_missile()
+			
 
 func fire_bullet():
 	var bullet = Utils.instance_scene_on_main(PlayerBullet, muzzle.global_position)
@@ -108,7 +109,7 @@ func fire_missile():
 func create_dust_effect():
 	var dust_position = global_position
 	dust_position.x += rand_range(-4,4)
-	Utils.instane_scene_on_main(DustEffect, dust_position)
+	Utils.instance_scene_on_main(DustEffect, dust_position)
 
 
 func get_input_vector():
@@ -147,7 +148,7 @@ func jump_check():
 			
 			
 func jump(force):
-	Utils.instane_scene_on_main(JumpEffect, global_position)
+	Utils.instance_scene_on_main(JumpEffect, global_position)
 	motion.y = -force
 	snap_vector = Vector2.ZERO
 
@@ -214,7 +215,7 @@ func wall_slide_jump_check(wall_axis):
 		motion.y = -JUMP_FORCE/1.25
 		state = MOVE
 		var dust_position = global_position + Vector2(wall_axis*4 , -2)
-		var dust = Utils.instane_scene_on_main(WallDustEffect, dust_position)
+		var dust = Utils.instance_scene_on_main(WallDustEffect, dust_position)
 		dust.scale.x = wall_axis
 		
 		
@@ -246,3 +247,8 @@ func _on_Hurtbox_hit(damage):
 
 func _on_died():
 	queue_free()
+
+
+func _on_PowerupDetector_area_entered(area):
+	if area is Powerup:
+		area._pickup()
