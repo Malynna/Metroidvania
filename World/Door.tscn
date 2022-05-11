@@ -7,18 +7,15 @@
 extents = Vector2( 8, 16 )
 
 [node name="Door" type="Area2D" groups=["Door"]]
-position = Vector2( 16, 16 )
 collision_layer = 0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -6, 0 )
+position = Vector2( 10, 0 )
 texture = ExtResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
