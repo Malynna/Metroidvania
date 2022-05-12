@@ -12,8 +12,9 @@ func _ready():
 	MainInstances.WorldCamera = self
 
 
-func _exit_tree():
+func queue_tree():
 	MainInstances.WorldCamera = null
+	.queue_free()
 
 
 func _process(_delta):

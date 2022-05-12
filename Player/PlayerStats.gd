@@ -27,4 +27,10 @@ func set_missiles(value):
 	
 func set_missiles_unlocked(value):
 	missiles_unlocked = value
+	SaverAndLoader.custom_data.missiles_unlocked = value
 	emit_signal("player_missiles_unlocked", missiles_unlocked)
+
+
+func refill_stats():
+	health = self.health
+	missiles = self.missiles
