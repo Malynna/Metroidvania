@@ -16,7 +16,7 @@ func _exit_tree():
 	MainInstances.WorldCamera = null
 
 
-func _process(delta):
+func _process(_delta):
 	offset_h = rand_range(-shake, shake)
 	offset_v = rand_range(-shake, shake)
 	

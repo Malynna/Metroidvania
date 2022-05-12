@@ -57,9 +57,10 @@ func _ready():
 	call_deferred("assign_world_camera")
 
 
-func _exit_tree():
+func queue_free():
 	MainInstances.Player = null
-	
+	.queue_free()
+
 
 func _physics_process(delta):
 	just_jumped = false

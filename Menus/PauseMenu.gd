@@ -8,7 +8,7 @@ func set_paused(value):
 	visible = paused
 	
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		self.paused = !paused
 
