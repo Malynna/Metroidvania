@@ -41,6 +41,7 @@ onready var fireBulletTimer = $FireBulletTimer
 onready var gun = $Sprite/PlayerGun
 onready var muzzle = $Sprite/PlayerGun/Sprite/Muzzle
 onready var powerupDetector = $PowerupDetector
+onready var cameraFollow = $CameraFollow
 
 # warning-ignore:unused_signal
 signal hit_door(door)
@@ -48,10 +49,12 @@ signal hit_door(door)
 
 func set_invincible(value):
 	invincible = value
-	
+
+
 func _ready():
 	PlayerStats.connect("player_died", self, "_on_died")
 	MainInstances.Player = self
+	call_deferred("assign_world_camera")
 
 
 func _exit_tree():
@@ -90,6 +93,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("fire_missile") and fireBulletTimer.time_left == 0 :
 		if PlayerStats.missiles > 0 and PlayerStats.missiles_unlocked:
 			fire_missile()
+
+func assign_world_camera():
+	cameraFollow.remote_path = MainInstances.WorldCamera.get_path()
+
 
 
 func save():
