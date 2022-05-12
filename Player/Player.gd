@@ -90,13 +90,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("fire_missile") and fireBulletTimer.time_left == 0 :
 		if PlayerStats.missiles > 0 and PlayerStats.missiles_unlocked:
 			fire_missile()
-			
-	if Input.is_action_pressed("save"):
-		SaverAndLoader.save_game()
-		
-	if Input.is_action_pressed("load"):
-		SaverAndLoader.load_game()
-			
+
+
 func save():
 	var save_dictionary = {
 		"filename": get_filename(),

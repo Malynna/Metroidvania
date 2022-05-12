@@ -1,9 +1,9 @@
 extends Node
 
-var custom_data = {
-	missiles_unlocked = false,
-	boss_defeated = false
-}
+#var custom_data = {
+#	missiles_unlocked = false,
+#	boss_defeated = false
+#}
 
 # warning-ignore:unused_class_variable
 var is_loading = false
@@ -12,7 +12,7 @@ func save_game():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
 	
-	save_game.store_line(to_json(custom_data))
+#	save_game.store_line(to_json(custom_data))
 	
 	var persistingNodes = get_tree().get_nodes_in_group("Persists")
 	for node in persistingNodes:
@@ -31,12 +31,13 @@ func load_game():
 		node.queue_free()
 	
 	save_game.open("user://savegame.save", File.READ)
-	var line_string = save_game.get_line()
-	
+		
 	if not save_game.eof_reached():
-		custom_data = parse_json(line_string)
+		pass
+#		custom_data = parse_json(save_game.get_line())
 	
 	while not save_game.eof_reached():
+		var line_string = save_game.get_line()
 		if line_string !="":
 			var current_line = parse_json(line_string)
 			if current_line != null:
