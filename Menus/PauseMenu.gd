@@ -9,13 +9,13 @@ func set_paused(value):
 	if paused:
 		SoundFX.play("Pause", 1, -10)
 	else:
-		SoundFX.play("Unpause", 1, -11)
-	
-	
-func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
-		self.paused = !paused
+		SoundFX.play("Unpause", 1, -10)
 
+# warning-ignore:unused_argument
+func _process(delta):
+	var Player_is_alive = get_tree().get_nodes_in_group("Player").size() > 0
+	if Input.is_action_just_pressed("pause") and Player_is_alive:
+		self.paused = !paused
 
 func _on_ResumeButton_pressed():
 	SoundFX.play("Click", 1, -10)

@@ -30,7 +30,7 @@ align = 1
 [node name="Gap" type="Control" parent="CenterContainer/VBoxContainer"]
 margin_top = 11.0
 margin_right = 64.0
-margin_bottom = 19.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 0, 4 )
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]

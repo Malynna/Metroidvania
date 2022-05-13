@@ -13,7 +13,7 @@ func _ready():
 		SaverAndLoader.is_loading = false
 	
 	MainInstances.Player.connect("hit_door", self, "_on_Player_hit_door")
-#	MainInstances.Player.connect("player_died", self, "_on_Player_player_died")
+	MainInstances.Player.connect("player_died", self, "_on_Player_player_died")
 
 func change_levels(door):
 	var offset = currentLevel.position
@@ -36,8 +36,7 @@ func _on_Player_hit_door(door):
 	call_deferred("change_levels", door)
 
 
-#func _on_Player_player_died():
-#	yield(get_tree().create_timer(1.0), "timeout")
-#	get_tree().change_scene("res://Menus/GameOverMenu.tscn")
-	
+func _on_Player_player_died():
+	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().change_scene("res://Menus/GameOverMenu.tscn")
 

@@ -8,7 +8,6 @@ onready var musicPlayer = $AudioStreamPlayer
 
 func _ready():
 	music_list.shuffle()
-	pass
 
 func list_play():
 	assert(music_list.size() > 0)

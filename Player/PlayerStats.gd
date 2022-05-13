@@ -32,5 +32,5 @@ func set_missiles_unlocked(value):
 
 
 func refill_stats():
-	health = self.health
-	missiles = self.missiles
+	health = max_health
+	missiles = max_missiles
