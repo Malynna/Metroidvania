@@ -5,4 +5,4 @@ var PlayerStats = ResourceLoader.PlayerStats
 
 
 func _pickup():
-	pass
+	SoundFX.play("Powerup", 1, -15)

@@ -130,6 +130,7 @@ func fire_missile():
 
 
 func create_dust_effect():
+	SoundFX.play("Step", rand_range(0.6, 1.2), -10)
 	var dust_position = global_position
 	dust_position.x += rand_range(-4,4)
 	Utils.instance_scene_on_main(DustEffect, dust_position)
@@ -171,6 +172,7 @@ func jump_check():
 			
 			
 func jump(force):
+	SoundFX.play("Jump", rand_range(0.8, 1.0), -10)
 	Utils.instance_scene_on_main(JumpEffect, global_position)
 	motion.y = -force
 	snap_vector = Vector2.ZERO
@@ -234,6 +236,7 @@ func get_wall_axis():
 
 func wall_slide_jump_check(wall_axis):
 	if Input.is_action_just_pressed("ui_up"):
+		SoundFX.play("Jump", rand_range(0.8, 1.1), -5)
 		motion.x = wall_axis * MAX_SPEED
 		motion.y = -JUMP_FORCE/1.25
 		state = MOVE
@@ -264,6 +267,7 @@ func wall_detach(delta, wall_axis):
 
 func _on_Hurtbox_hit(damage):
 	if not invincible:
+		SoundFX.play("Hurt")
 		PlayerStats.health -= damage
 		blinkAnimator.play("Blink")
 
